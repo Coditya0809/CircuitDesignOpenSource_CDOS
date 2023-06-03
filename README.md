@@ -65,8 +65,15 @@ The exact location for your spice model may be seen in the terminal as soon as y
 
 The path for models will be: SKYWATER_MODELS path in the above code.
 
+Incase that doesn't work, you can try out the following command in your terminal from your root directory to find out the exact path of the spice models:
 
-This path must be included in the NGSpice code for simulation as follows:
+```
+sudo find ./ -name "sky130.lib.spice" -type f
+```
+
+If this too doesn't work, you might have to consider re-installing Sky130 PDK from scratch.
+
+The path of the NGSpice models must be included in the NGSpice code for simulation as follows:
 ```
 name=s1 only_toplevel=false value=".lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
 .tran 0.1n 100n
