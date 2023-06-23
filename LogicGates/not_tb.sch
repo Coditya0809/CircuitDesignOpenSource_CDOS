@@ -21,7 +21,7 @@ lab=vout}
 N 490 -130 530 -130 {
 lab=vin}
 C {LogicGates/not.sym} 630 -130 0 0 {name=x1}
-C {devices/vsource.sym} 80 -140 0 0 {name=vin value="pulse(0 1.8 0.01ns 0.01ns 0.01ns 5ns 10ns)"}
+C {devices/vsource.sym} 80 -140 0 0 {name=vin value="pulse(0 1.8 0ns 0.5ns 0.5ns 4.5ns 10ns)"}
 C {devices/vsource.sym} 370 -140 0 0 {name=vdd value=1.8}
 C {devices/lab_pin.sym} 370 -210 0 0 {name=l1 sig_type=std_logic lab=vdd}
 C {devices/lab_pin.sym} 80 -210 0 0 {name=l3 sig_type=std_logic lab=vin}
@@ -35,7 +35,7 @@ C {devices/lab_pin.sym} 490 -130 0 0 {name=l9 sig_type=std_logic lab=vin}
 C {devices/code.sym} 160 -370 0 0 {name=spice only_toplevel=false value="
 .lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
 .control
-    tran 0.1n 100n
+    tran 0.1n 50n
     plot vin vout
 .endc
 
